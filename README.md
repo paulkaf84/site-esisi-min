@@ -28,7 +28,6 @@ A minimal version of ESIS's web site
 ##DEPENDENCY
 <ul>
     <li>Bootstrap</li>
-    <li>Ajax</li>
 </ul>
 
 ##DIFFICULTY
