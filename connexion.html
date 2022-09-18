@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <title>Connexion</title>
+    <style>
+        #cadre-form {
+            border-radius: 10px;
+        }
+
+        #btn-connexion {
+            background-color: #7BB07C;
+            font-weight: bold;
+        }
+
+        #messageErreur {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <div class="container">
+        <div class="row justify-content-center">
+            <!-- Cadre du formulaire -->
+            <div class="col-12 col-sm-8 col-md-4 border bg-white px-3 py-3 mt-4" id="cadre-form">
+                <!-- Formulaire de connexion -->
+                <form onsubmit="return seConnecter()" method="get" action="resultat.html">
+                    <p class="d-flex justify-content-center mb-0">
+                        <img src="assets/img/logoesis.png" alt="" width="80">
+                    </p>
+                    <h1 class="text-center text-secondary mb-4">Connexion</h1>
+                    <div class="form-floating mb-3">
+                        <input type="text" class="form-control" id="txtMatricule" placeholder="Matricule" required>
+                        <label for="txtMatricule">Matricule</label>
+                    </div>
+                    <select class="form-select px-1 py-3 mb-3" id="cbxPromotion">
+                        <option value="PREPA">Année Préparatoire</option>
+                        <option value="L1">Première Licence</option>
+                        <option value="L2AS">L2 Administration Systèmes</option>
+                        <option value="L2DSG">L2 Design & Multimédia</option>
+                        <option value="L2GL">L2 Génie Logiciel</option>
+                        <option value="L2MSI">L2 Management des SI</option>
+                        <option value="L2TLC">L2 Télécommunications</option>
+                        <option value="L3AS">L3 Administration Systèmes</option>
+                        <option value="L3DSG">L3 Design & Multimédia</option>
+                        <option value="L3GL">L3 Génie Logiciel</option>
+                        <option value="L3MSI">L3 Management des SI</option>
+                        <option value="L3TLC">L3 Télécommunications</option>
+                    </select>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="txtPassword" placeholder="Mot de passe"
+                            required>
+                        <label for="txtPassword">Mot de passe</label>
+                    </div>
+                    <!-- Message d'erreur: quand identifiants invalides -->
+                    <p id="messageErreur" class="text-danger text-center">
+                        Vos identifiants ne sont pas corrects
+                    </p>
+                    <button class="w-100 btn btn-lg text-white" type="submit" id="btn-connexion">Se connecter</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Inclure Bootstrap JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script>
+
+        function seConnecter() {
+            /*
+                Fonction qui valide les identifiants
+                pour accéder aux résultats 
+            */
+            // Récupérer les éléments du formulaire
+            let matricule = document.getElementById("txtMatricule").value;
+            let promotion = document.getElementById("cbxPromotion").value;
+            let password = document.getElementById("txtPassword").value;
+
+            // Message d'erreur à afficher en cas d'identifiants incorrects
+            let messageErreur = document.getElementById("messageErreur");
+
+            // Vérifier si les coordonnées correspondent à:
+            // matricule: 20AN006, promotion: L1, mot de passe: ESIS
+            if (matricule.toUpperCase() == "20AN006" && promotion == "L1" && password == "ESIS") {
+                messageErreur.style.display = 'none';
+
+                // Permet de laisser le formulaire rediriger vers la page des résultats
+                return true
+            } else {
+                // Afficher le message d'erreur
+                messageErreur.style.display = 'block';
+
+                // Masquer le message d'erreur après 3 sécondes
+                setTimeout(function () {
+                    messageErreur.style.display = 'none';
+                }, 3000);
+                return false; // Annuler la redirection
+            }
+        }
+    </script>
+</body>
+
+</html>
