@@ -1,7 +1,7 @@
 # site-esisi-min
 A minimal version of ESIS's web site
-##MEMBERS
-###ACTIFS
+## MEMBERS
+### ACTIFS
     AISHA N'SIMBO AISHA 20AN006(reporter)
 
     KAFANDA NDALA PAUL 20KN105
@@ -10,7 +10,7 @@ A minimal version of ESIS's web site
     
     KASEYA KALENGA SYNTICHE 20KK173(chef)
  
-###INACTIFS
+### INACTIFS
     KASONGO MULENDA NOELLA 20KM188
     
     KASEYA KALENGA SYNTICHE 20KK173
@@ -25,23 +25,23 @@ A minimal version of ESIS's web site
 
     MBANG WASAKWEL NICOLAS
 
-##DEPENDENCY
+## DEPENDENCY
 <ul>
     <li>Bootstrap</li>
 </ul>
 
-##DIFFICULTY
+## DIFFICULTY
 
 <ul>
     <li>Temps</li>
     <li>membres</li>
 </ul>
 
-##STRONG POINT
+## STRONG POINT
 None
-##WEAKNESS
+## WEAKNESS
 version Bootstrap <= 3
 
-##JAMES GOSLING
+## JAMES GOSLING
     A canadian computer scientist.
     Java programming language designer
